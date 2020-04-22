@@ -3,4 +3,4 @@ After=dbus.socket
 
 [Service]
 Type=oneshot
-ExecStart=sh -c 'notify-send "Tick Tock" "$(date +%%H:%%M)" --icon ~/cuckoo/cuckoo-128px.png --urgency low --expire-time 15000'
+ExecStart=sh -c 'notify-send "Tick Tock" "$(date +%%H:%%M)" --icon %ICON% --urgency low --expire-time 15000'
