@@ -1,0 +1,28 @@
+= Cuckoo
+
+A stupid script that shows a notification every 30 minutes.
+
+Use it to remember to take a break, stand up, stretch your legs, contemplate life and how meaningless your existence is.
+
+== Installation
+
+Clone the repo
+
+Copy the `cuckoo.service` and `cuckoo.timer` files in appropriate places.
+Pick something from the paths that `man systemd.unit` lists. I recommend `~/.config/systemd/user/`
+
+`systemctl enable cuckoo.timer` and `systemd start cuckoo.timer` to schedule it
+
+=== for ArchLinux
+
+For archlinux you can just `makepkg -sri` to install it after cloning the repo
+
+== Configuration
+
+The default schedule is every half an hour.
+
+If you'd like it to be something different you'll have to edit the `cuckoo.timer` manually prior to installation.
+
+= TODO
+
+- Making the easily schedule configurable

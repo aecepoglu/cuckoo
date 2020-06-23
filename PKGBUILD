@@ -1,6 +1,6 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=cuckoo-git
-pkgver=0.1.0
+pkgver=r2.30fedc9
 pkgrel=1
 pkgdesc=""
 arch=("x86_64")
@@ -19,7 +19,10 @@ source=('cuckoo.service' 'cuckoo.timer' 'Makefile' 'cuckoo.png')
 noextract=()
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 
+pkgver() {
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
 package() {
-	cd "$srcdir/"
 	make DESTDIR="$pkgdir/" install
 }
